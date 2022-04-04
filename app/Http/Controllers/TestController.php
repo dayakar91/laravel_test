@@ -74,7 +74,9 @@ class TestController extends Controller
 
 	}
 	public function alltestsjoins(){
+		//all records with two tables
 		$result=Test::where('test.id','>',0)->leftJoin('test_posts as tp','test.id','=','tp.test_id')->select('*')->get();
 		return $result;
+		
 	}
 }
